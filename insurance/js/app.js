@@ -45,7 +45,9 @@ function Insurance(make,year,level){
 }
 //Calculate the price for the current quotation
 Insurance.prototype.calculateQuotation = function(insurance){
-console.log(insurance)
+    let price;
+    const base = 2000;
+    
 }
 
 // Everything related to the HTML
