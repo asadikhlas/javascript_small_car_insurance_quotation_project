@@ -16,19 +16,18 @@ function HTMLUI() {}
 HTMLUI.prototype.displayYears = function() {
   //Max and Min years
   const max = new Date().getFullYear(),
-  min = max - 20;
-//   console.log(min);
-//   console.log(max)
+    min = max - 20;
+  //   console.log(min);
+  //   console.log(max)
 
-const selectYears = document.getElementById('year');
+  const selectYears = document.getElementById("year");
 
-//print the value
+  //print the value
 
-for(let i= max; i > min; i--){
-    const option = document.createElement('option')
+  for (let i = max; i > min; i--) {
+    const option = document.createElement("option");
     option.value = i;
     option.textContent = i;
-    selectYears.appendChild(option)
-}
-
+    selectYears.appendChild(option);
+  }
 };
