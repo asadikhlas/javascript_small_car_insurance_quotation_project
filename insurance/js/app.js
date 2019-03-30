@@ -47,7 +47,17 @@ function Insurance(make,year,level){
 Insurance.prototype.calculateQuotation = function(insurance){
     let price;
     const base = 2000;
-    
+
+    //get the make
+    const make= insurance.make;
+
+    /*  
+    1= American 15%
+    2= asian 05%
+    3= european 35%
+
+    */
+
 }
 
 // Everything related to the HTML
