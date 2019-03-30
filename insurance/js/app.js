@@ -17,11 +17,23 @@ function eventListener(){
       //When the form is submitted
       form.addEventListener('submit',function(e){
           e.preventDefault();
+
+
+          // Read the values from the form
           const make = document.getElementById('make').value;
           const year = document.getElementById('year').value;
+          //Read the Radio button
+          const level = document.querySelector('input[name="level"]:checked').value 
 
-          console.log(make)
-          console.log(year)
+          //Checked that all the fields have something
+          if(make === '' || year === '' || level === ''){
+              console.log('Error')
+          }else{
+              console.log('Alright')
+          }
+
+        //   console.log(make)
+        //   console.log(year)
 
       })
 
