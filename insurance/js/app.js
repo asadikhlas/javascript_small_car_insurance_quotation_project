@@ -28,6 +28,7 @@ function eventListener() {
     } else {
         // Make the quotation
         const insurance = new Insurance(make, year, level);
+        const price = insurance.calculateQuotation(insurance)
     }
 
     //   console.log(make)
@@ -41,6 +42,10 @@ function Insurance(make,year,level){
     this.make = make;
     this.year = year
     this.level = level
+}
+//Calculate the price for the current quotation
+Insurance.prototype.calculateQuotation = function(insurance){
+console.log(insurance)
 }
 
 // Everything related to the HTML
