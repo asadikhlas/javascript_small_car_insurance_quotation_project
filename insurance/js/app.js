@@ -26,7 +26,8 @@ function eventListener() {
     if (make === "" || year === "" || level === "") {
       html.displayError("All the fields are mandatory");
     } else {
-      console.log("Alright");
+        // Make the quotation
+        const insurance = new Insurance(make, year, level);
     }
 
     //   console.log(make)
@@ -34,6 +35,15 @@ function eventListener() {
   });
 }
 //Objects
+
+//Everything related to the quotatio and calculation in insurance
+function Insurance(make,year,level){
+    this.make = make;
+    this.year = year
+    this.level = level
+}
+
+// Everything related to the HTML
 
 function HTMLUI() {}
 
