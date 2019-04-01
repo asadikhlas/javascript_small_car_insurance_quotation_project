@@ -26,9 +26,9 @@ function eventListener() {
     if (make === "" || year === "" || level === "") {
       html.displayError("All the fields are mandatory");
     } else {
-        // Make the quotation
-        const insurance = new Insurance(make, year, level);
-        const price = insurance.calculateQuotation(insurance)
+      // Make the quotation
+      const insurance = new Insurance(make, year, level);
+      const price = insurance.calculateQuotation(insurance);
     }
 
     //   console.log(make)
@@ -38,27 +38,26 @@ function eventListener() {
 //Objects
 
 //Everything related to the quotatio and calculation in insurance
-function Insurance(make,year,level){
-    this.make = make;
-    this.year = year
-    this.level = level
+function Insurance(make, year, level) {
+  this.make = make;
+  this.year = year;
+  this.level = level;
 }
 //Calculate the price for the current quotation
-Insurance.prototype.calculateQuotation = function(insurance){
-    let price;
-    const base = 2000;
+Insurance.prototype.calculateQuotation = function(insurance) {
+  let price;
+  const base = 2000;
 
-    //get the make
-    const make= insurance.make;
+  //get the make
+  const make = insurance.make;
 
-    /*  
+  /*  
     1= American 15%
     2= asian 05%
     3= european 35%
 
     */
-
-}
+};
 
 // Everything related to the HTML
 
