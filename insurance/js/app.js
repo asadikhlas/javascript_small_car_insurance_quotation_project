@@ -27,7 +27,7 @@ function eventListener() {
       html.displayError("All the fields are mandatory");
     } else {
       // Make the quotation
-      const insurance = new Insurance(make, year, level);        
+      const insurance = new Insurance(make, year, level);       
       const price = insurance.calculateQuotation(insurance);
     }
 
