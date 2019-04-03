@@ -68,7 +68,12 @@ Insurance.prototype.calculateQuotation = function(insurance) {
      price = base * 1.35;
      break;
    }
-   console.log(price)
+  //Get the year
+  const year = insurance.year;
+  //Get the years difference
+  
+
+
 };
 
 // Everything related to the HTML
