@@ -193,7 +193,4 @@ HTMLUI.prototype.showResults = function(price, insurance) {
     //insert this into html
     result.appendChild(div)
   }, 3000)
-
-  //insert this into html
-  result.appendChild(div);
 };
