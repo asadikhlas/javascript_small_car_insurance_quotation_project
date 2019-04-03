@@ -31,7 +31,7 @@ function eventListener() {
       const price = insurance.calculateQuotation(insurance);
 
       //print the resu;t from htmlui
-      html.showResults(price)
+      html.showResults(price);
     }
 
     //   console.log(make)
@@ -77,12 +77,11 @@ Insurance.prototype.calculateQuotation = function(insurance) {
   const difference = this.getYearDifference(year);
   //Each year the cost of the insurance is fgoing to be 3% cheaper
   price = price - (difference * 3 * price) / 100;
- 
+
   //Check the level of pritection
   const level = insurance.level;
-  price = this.calculateLevel(price,level);
+  price = this.calculateLevel(price, level);
   return price;
-
 
   //Get the years difference
 };
@@ -92,21 +91,19 @@ Insurance.prototype.getYearDifference = function(year) {
 };
 
 //Adds the value based on the level of protection
-Insurance.prototype.calculateLevel = function(price,level){
+Insurance.prototype.calculateLevel = function(price, level) {
   /*
   Basic insurance is going to be increase the value by 3%
   complete Insurance is going to be increase the value of 50% 
   */
- if(level === 'basic'){
-   price = price * 1.30;
- }else{
-   price = price * 1.50;
- }
+  if (level === "basic") {
+    price = price * 1.3;
+  } else {
+    price = price * 1.5;
+  }
 
- return price
-
-}
-
+  return price;
+};
 
 // Everything related to the HTML
 
@@ -154,16 +151,16 @@ HTMLUI.prototype.displayError = function(message) {
 };
 
 //prints the result into the html
-HTMLUI.prototype.showResults = function(price){
-  const result = document.getElementById('result');
+HTMLUI.prototype.showResults = function(price) {
+  const result = document.getElementById("result");
 
   //Create a div with the result
-  const div = document.createElement('div')
+  const div = document.createElement("div");
 
   //Insert the result
   div.innerHTML = `
   <p class="total">Total: ${price}</p>
-  `
+  `;
   //insert this into html
-  result.appendChild(div)
-} 
+  result.appendChild(div);
+};
