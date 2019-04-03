@@ -186,7 +186,8 @@ HTMLUI.prototype.showResults = function(price, insurance) {
   <p>Level: ${insurance.level}</p>
   <p class="total">Total: ${price}</p>
   `;
-  
+  const spinner = document.querySelector('#loading img');
+  spinner.style.display = 'block';
 
   //insert this into html
   result.appendChild(div);
