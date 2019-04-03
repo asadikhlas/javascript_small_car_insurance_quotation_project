@@ -26,6 +26,11 @@ function eventListener() {
     if (make === "" || year === "" || level === "") {
       html.displayError("All the fields are mandatory");
     } else {
+      //clear the previous quaotes
+      const prevResult = document.querySelector('#result div')
+      if(prevResult != null){
+        prevResult.remove();
+      }
       // Make the quotation
       const insurance = new Insurance(make, year, level);
       const price = insurance.calculateQuotation(insurance);
@@ -181,6 +186,8 @@ HTMLUI.prototype.showResults = function(price, insurance) {
   <p>Level: ${insurance.level}</p>
   <p class="total">Total: ${price}</p>
   `;
+  
+
   //insert this into html
   result.appendChild(div);
 };
