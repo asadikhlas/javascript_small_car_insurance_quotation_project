@@ -57,6 +57,18 @@ Insurance.prototype.calculateQuotation = function(insurance) {
     3= european 35%
 
     */
+   switch(make){
+     case '1':
+     price = base * 1.15;
+     break;
+     case '2':
+     price = base * 1.05;
+     break;
+     case '3':
+     price = base * 1.35;
+     break;
+   }
+   console.log(price)
 };
 
 // Everything related to the HTML
