@@ -27,8 +27,8 @@ function eventListener() {
       html.displayError("All the fields are mandatory");
     } else {
       //clear the previous quaotes
-      const prevResult = document.querySelector('#result div')
-      if(prevResult != null){
+      const prevResult = document.querySelector("#result div");
+      if (prevResult != null) {
         prevResult.remove();
       }
       // Make the quotation
@@ -162,21 +162,19 @@ HTMLUI.prototype.showResults = function(price, insurance) {
   //Create a div with the result
   const div = document.createElement("div");
 
-
   //Get make from the object and assign a readable name
   let make = insurance.make;
-  switch(make){
-    case '1':
-    make = 'American';
-    break;
-    case '2':
-    make = 'Asian';
-    break;
-    case '3':
-    make = 'European';
-    break;
+  switch (make) {
+    case "1":
+      make = "American";
+      break;
+    case "2":
+      make = "Asian";
+      break;
+    case "3":
+      make = "European";
+      break;
   }
-
 
   //Insert the result
   div.innerHTML = `
@@ -186,11 +184,11 @@ HTMLUI.prototype.showResults = function(price, insurance) {
   <p>Level: ${insurance.level}</p>
   <p class="total">Total: ${price}</p>
   `;
-  const spinner = document.querySelector('#loading img');
-  spinner.style.display = 'block';
-  setTimeout(function(){
-    spinner.style.display = 'none';
+  const spinner = document.querySelector("#loading img");
+  spinner.style.display = "block";
+  setTimeout(function() {
+    spinner.style.display = "none";
     //insert this into html
-    result.appendChild(div)
-  }, 3000)
+    result.appendChild(div);
+  }, 3000);
 };
