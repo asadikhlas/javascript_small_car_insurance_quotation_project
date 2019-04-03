@@ -29,6 +29,9 @@ function eventListener() {
       // Make the quotation
       const insurance = new Insurance(make, year, level);
       const price = insurance.calculateQuotation(insurance);
+
+      //print the resu;t from htmlui
+      html.showResults(price)
     }
 
     //   console.log(make)
@@ -57,36 +60,53 @@ Insurance.prototype.calculateQuotation = function(insurance) {
     3= european 35%
 
     */
-   switch(make){
-     case '1':
-     price = base * 1.15;
-     break;
-     case '2':
-     price = base * 1.05;
-     break;
-     case '3':
-     price = base * 1.35;
-     break;
-   }
+  switch (make) {
+    case "1":
+      price = base * 1.15;
+      break;
+    case "2":
+      price = base * 1.05;
+      break;
+    case "3":
+      price = base * 1.35;
+      break;
+  }
   //Get the year
   const year = insurance.year;
 
   const difference = this.getYearDifference(year);
   //Each year the cost of the insurance is fgoing to be 3% cheaper
-  price = price - ((difference * 3) * price) / 100;
-  console.log(price)
+  price = price - (difference * 3 * price) / 100;
+ 
+  //Check the level of pritection
+  const level = insurance.level;
+  price = this.calculateLevel(price,level);
+  return price;
 
 
   //Get the years difference
-
-
-
-
 };
 //Return the difference between year
-Insurance.prototype.getYearDifference = function(year){
-  return new Date().getFullYear() - year
+Insurance.prototype.getYearDifference = function(year) {
+  return new Date().getFullYear() - year;
+};
+
+//Adds the value based on the level of protection
+Insurance.prototype.calculateLevel = function(price,level){
+  /*
+  Basic insurance is going to be increase the value by 3%
+  complete Insurance is going to be increase the value of 50% 
+  */
+ if(level === 'basic'){
+   price = price * 1.30;
+ }else{
+   price = price * 1.50;
+ }
+
+ return price
+
 }
+
 
 // Everything related to the HTML
 
