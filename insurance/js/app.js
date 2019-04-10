@@ -189,6 +189,6 @@ HTMLUI.prototype.showResults = function(price, insurance) {
   setTimeout(function() {
     spinner.style.display = "none";
     //insert this into html
-    result.appendChild(div);      
+    result.appendChild(div);       
   }, 3000);
 };
